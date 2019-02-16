@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>1</depth>
+  <depth>11</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -35,6 +35,8 @@ for (var _i = 0; _i &lt; 6; ++_i) {
         inst.image_index = _counter++;
         inst.image_xscale = 0.8
         inst.image_yscale = 0.8
+        inst.visible = true
+        inst.bg = false
     }
 }
 </string>
