@@ -35,13 +35,35 @@ with obj_sponsors {
     visible = 0;
     bg = true;
     }
-bgcolors = array_create(5)
-bgcolors[0] = 0
-bgcolors[1] = 4210752
-bgcolors[2] = 4210752
-bgcolors[3] = 8388736
-bgcolors[4] = 32768
+bgcolors = array_create(4)
+bgcolors[0] = c_dkgray
+bgcolors[1] = $e7e7e7
+bgcolors[2] = $c67576
+bgcolors[3] = $695258
 bgcolor = 0
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>instance_destroy(obj_cookie)
 </string>
           </argument>
         </arguments>
@@ -85,6 +107,17 @@ bgcolor = 0
             if !bg bg = true;
         }
         bgcolor = bgcolors[irandom_range(0,array_length_1d(bgcolors)-1)]
+    }
+    
+    if stage &gt; 6 {
+        repeat(stage / 3) {
+            inst = instance_create(irandom_range(room_width/8,room_width/8*7),
+                        irandom_range(room_height/8,room_height/8*7),
+                        obj_cookie_neutral);
+            inst.depth = _depth--;
+            //inst.sprite_index = category[irandom_range(0,category_max)]+1;
+            //inst.spin = irandom_range(0,1);
+        }
     }
     
     if stage &gt; 8 {
@@ -149,12 +182,14 @@ with(obj_cookie) {
 //show_message("Clicked is "+string(global.clicked))
 if(position_meeting(mouse_x, mouse_y, global.clicked)) {
     with(global.clicked) {
-        if self == obj_cookie_good {
+        if good {
             score += 100
             }
-        else {
+        else if !good {
             score -= 100
             }
+        
+        if good != 2
         instance_destroy()
     }
 }
@@ -164,6 +199,27 @@ if(position_meeting(mouse_x, mouse_y, global.clicked)) {
       </action>
     </event>
     <event eventtype="8" enumb="64">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_set_color(c_white)
+</string>
+          </argument>
+        </arguments>
+      </action>
       <action>
         <libid>1</libid>
         <id>703</id>

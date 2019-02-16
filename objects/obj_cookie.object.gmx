@@ -28,6 +28,7 @@
             <string>image_alpha = 0.9
 spin = false
 movement = false
+good = true
 
 alarm[0] = 1
 </string>

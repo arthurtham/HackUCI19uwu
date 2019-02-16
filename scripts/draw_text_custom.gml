@@ -7,7 +7,7 @@ draw_set_valign(argument6)
 
 if argument7 {
     draw_set_color(c_black)
-    draw_text_transformed(argument0-2,argument1-2,argument2,argument8,argument9,argument10)
+    draw_text_transformed(argument0-2*argument8,argument1-2*argument9,argument2,argument8,argument9,argument10)
     }
 draw_set_color(argument4)
 draw_text_transformed(argument0,argument1,argument2,argument8,argument9,argument10)

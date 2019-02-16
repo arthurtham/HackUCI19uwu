@@ -27,9 +27,12 @@
             <kind>1</kind>
             <string>///sponsors
 var _counter = 0
-for (var _i = 0; _i &lt; 6; ++_i) {
+for (var _i = 0; _i &lt; 7; ++_i) {
     for (var _j = 0; _j &lt; 3; ++_j) {
-        inst = instance_create(room_width/9*(2+_i),
+        if _j == 2 and (_i == 0 or _i == 6) {
+            continue
+            }
+        inst = instance_create(room_width/8*(1+_i),
             y+((sprite_get_height(spr_sponsors)-48)*_j),
             obj_sponsors);
         inst.image_index = _counter++;
@@ -61,10 +64,13 @@ for (var _i = 0; _i &lt; 6; ++_i) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_rectangle_colour(0,room_height/3*2,room_width,room_height,
+            <string>draw_set_alpha(1)
+draw_rectangle_colour(0,room_height/3*2+24,room_width,room_height,
 c_ltgray,c_ltgray,c_ltgray,c_ltgray,false)
-draw_rectangle_colour(0,room_height/3*2+24,room_width,room_height/3*2-48,
-c_red,c_red,c_red,c_red,false)
+draw_set_color($c67576)
+draw_rectangle(0,room_height/3*2+40,room_width,room_height/3*2+24,
+false)
+draw_set_color(c_black)
 </string>
           </argument>
         </arguments>
