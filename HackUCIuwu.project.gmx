@@ -21,6 +21,8 @@
     <sprite>sprites\spr_hacklogo</sprite>
     <sprite>sprites\spr_zotalert</sprite>
     <sprite>sprites\spr_milktea</sprite>
+    <sprite>sprites\spr_banhmi</sprite>
+    <sprite>sprites\spr_shuttle</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -46,6 +48,10 @@
     <object>objects\obj_cookie_neutral</object>
     <object>objects\obj_zotalert</object>
     <object>objects\obj_zotalert_controller</object>
+    <object>objects\obj_boba</object>
+    <object>objects\obj_banhmi</object>
+    <object>objects\obj_shuttle</object>
+    <object>objects\obj_score_draw</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_title</room>
