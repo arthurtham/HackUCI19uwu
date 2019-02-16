@@ -55,8 +55,14 @@ bg = false
                     y+sprite_get_height(sprite_index)/2*image_yscale,
                     x-sprite_get_width(sprite_index)/2*image_xscale,
                     y-sprite_get_height(sprite_index)/2*image_yscale,
-                    c_ltgray,c_ltgray,
+                    $e7e7e7,$e7e7e7,
                     false)
+    draw_roundrect_color(x+sprite_get_width(sprite_index)/2*image_xscale,
+                    y+sprite_get_height(sprite_index)/2*image_yscale,
+                    x-sprite_get_width(sprite_index)/2*image_xscale,
+                    y-sprite_get_height(sprite_index)/2*image_yscale,
+                    c_white,c_white,
+                    true)
     draw_set_alpha(1.0)
 }
 draw_self()

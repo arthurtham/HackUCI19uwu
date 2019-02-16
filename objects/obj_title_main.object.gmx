@@ -83,28 +83,6 @@ alarm[1] = 3
         </arguments>
       </action>
     </event>
-    <event eventtype="6" enumb="50">
-      <action>
-        <libid>1</libid>
-        <id>224</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_another_room</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>11</kind>
-            <room>rm_game</room>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
@@ -124,13 +102,13 @@ alarm[1] = 3
             <kind>1</kind>
             <string>///draw title screen
 draw_self()
-draw_text_custom(x,y+156,"Celebration of uwu at HackUCI 2019",
+draw_text_custom(x,y+156,"450 Owos. 36 Ewes. Unlimited Uwus.",
     fnt_default,c_white,fa_center,fa_middle,true,0.75,0.75,0)
     
-draw_set_alpha(show)
-draw_text_custom(room_width/2,room_height/3*2,"LEFT CLICK TO START",
+/*draw_set_alpha(show)
+draw_text_custom(room_width/2,room_height/3*2-12,"LEFT CLICK TO START",
     fnt_default,c_black,fa_center,fa_middle,false,1,1,0)
-draw_set_alpha(1)
+draw_set_alpha(1)*/
 </string>
           </argument>
         </arguments>
