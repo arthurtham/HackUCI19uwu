@@ -17,7 +17,10 @@
     <sprite>sprites\spr_momcookie</sprite>
     <sprite>sprites\spr_bgfull</sprite>
     <sprite>sprites\spr_button</sprite>
+    <sprite>sprites\spr_button_short</sprite>
     <sprite>sprites\spr_hacklogo</sprite>
+    <sprite>sprites\spr_zotalert</sprite>
+    <sprite>sprites\spr_milktea</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -41,12 +44,14 @@
     <object>objects\obj_results</object>
     <object>objects\obj_button</object>
     <object>objects\obj_cookie_neutral</object>
+    <object>objects\obj_zotalert</object>
+    <object>objects\obj_zotalert_controller</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_title</room>
     <room>rooms\rm_game</room>
-    <room>rooms\rm_test</room>
     <room>rooms\rm_results</room>
+    <room>rooms\rm_test</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

@@ -37,7 +37,7 @@ with obj_sponsors {
     }
 bgcolors = array_create(4)
 bgcolors[0] = c_dkgray
-bgcolors[1] = $e7e7e7
+bgcolors[1] = 0
 bgcolors[2] = $c67576
 bgcolors[3] = $695258
 bgcolor = 0
@@ -112,7 +112,7 @@ bgcolor = 0
     if stage &gt; 6 {
         repeat(stage / 3) {
             inst = instance_create(irandom_range(room_width/8,room_width/8*7),
-                        irandom_range(room_height/8,room_height/8*7),
+                        irandom_range(room_height/8,room_height/8*6),
                         obj_cookie_neutral);
             inst.depth = _depth--;
             //inst.sprite_index = category[irandom_range(0,category_max)]+1;
@@ -123,7 +123,7 @@ bgcolor = 0
     if stage &gt; 8 {
         repeat(stage / 3) {
             inst = instance_create(irandom_range(room_width/8,room_width/8*7),
-                        irandom_range(room_height/8,room_height/8*7),
+                        irandom_range(room_height/8,room_height/8*6),
                         obj_cookie_bad);
             inst.depth = _depth--;
             inst.sprite_index = category[irandom_range(0,category_max)]+1;
@@ -134,7 +134,7 @@ bgcolor = 0
     
     repeat(min(stage,15)) {
         inst = instance_create(irandom_range(room_width/8,room_width/8*7),
-                        irandom_range(room_height/8,room_height/8*7),
+                        irandom_range(room_height/8,room_height/8*6),
                         obj_cookie_good);
         inst.depth = _depth--;
         inst.sprite_index = category[irandom_range(0,category_max)];

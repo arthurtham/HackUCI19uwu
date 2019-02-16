@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>self</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -103,7 +103,9 @@ color = c_black
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>room_goto(goto)
+            <string>if goto != noone {
+    room_goto(goto)
+    }
 </string>
           </argument>
         </arguments>
