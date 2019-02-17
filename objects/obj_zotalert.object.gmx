@@ -3,7 +3,7 @@
   <spriteName>spr_zotalert</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-1000</depth>
+  <depth>-1001</depth>
   <persistent>0</persistent>
   <parentName>obj_cookie</parentName>
   <maskName>&lt;undefined&gt;</maskName>

@@ -235,7 +235,7 @@ if(position_meeting(mouse_x, mouse_y, global.clicked)) {
             with obj_score_draw alarm[0] = 1
             }
         else if !good {
-            score -= 100
+            score -= 500
             with obj_score_draw alarm[1] = 1
             }
         
@@ -267,6 +267,29 @@ if(position_meeting(mouse_x, mouse_y, global.clicked)) {
             <kind>1</kind>
             <string>draw_rectangle_colour(0,0,room_width,room_height,
 bgcolor,bgcolor,bgcolor,bgcolor,false)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="27">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>with obj_clock clock = 10
 </string>
           </argument>
         </arguments>
