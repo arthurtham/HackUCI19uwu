@@ -31,6 +31,31 @@ image_index = 0
 image_speed = 0
 color = c_white
 text = "null"
+size = 1
+alarm[0] = 1
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if size == 0 sprite_index = spr_button_short
 </string>
           </argument>
         </arguments>
@@ -104,7 +129,7 @@ color = c_black
           <argument>
             <kind>1</kind>
             <string>if goto != noone {
-    room_goto(goto)
+    room_goto_transition(goto,0,20)
     }
 </string>
           </argument>

@@ -3,7 +3,7 @@
   <spriteName>spr_shuttle</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-20</depth>
+  <depth>-1000</depth>
   <persistent>0</persistent>
   <parentName>obj_cookie</parentName>
   <maskName>&lt;undefined&gt;</maskName>
