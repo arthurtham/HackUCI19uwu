@@ -92,6 +92,7 @@
     <object>objects\obj_button_about</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_splash</room>
     <room>rooms\rm_title</room>
     <room>rooms\rm_game</room>
     <room>rooms\rm_results</room>
