@@ -52,6 +52,7 @@
     <object>objects\obj_results</object>
     <object>objects\obj_button</object>
     <object>objects\obj_button_leaderboard</object>
+    <object>objects\obj_button_sponsor</object>
     <object>objects\obj_cookie_neutral</object>
     <object>objects\obj_zotalert</object>
     <object>objects\obj_zotalert_controller</object>
