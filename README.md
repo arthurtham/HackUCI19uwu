@@ -32,4 +32,4 @@ The power of uwu has led me to create something that may not be necessarily orig
 ## What's next for HackUWU
 HackUWU is well on its way to spreading its sense of joyous uwu to the world. Perhaps when the time comes for UWUcon, HackUWU will return once again with the power of its sponsors.
 
-(A non-uwu version of this story is located on the Devpost submission.)
+(An uwu version of this story is located on the Devpost submission.)
