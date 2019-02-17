@@ -214,6 +214,8 @@ with obj_score_draw instance_destroy()
             <string>///increase score and delete
 //https://www.reddit.com/r/gamemaker/comments/4th3lv/help_with_depth_priority_issue/
 //show_message("CLICK")
+audio_play_sound(snd_cookie,0,0)
+
 
 var counter;
 global.clicked = instance_find(obj_cookie, 0);
@@ -230,17 +232,44 @@ with(obj_cookie) {
 //show_message("Clicked is "+string(global.clicked))
 if(position_meeting(mouse_x, mouse_y, global.clicked)) {
     with(global.clicked) {
-        if good {
+        if good == 1 {
             score += 100
+            if sprite_index == spr_ewecookie 
+                score += 10
+            else if sprite_index == spr_owocookie
+                score += 25
             with obj_score_draw alarm[0] = 1
+            audio_play_sound(irandom_range(0,7),0,0)
             }
-        else if !good {
+        else if good == 0 {
             score -= 500
             with obj_score_draw alarm[1] = 1
+            audio_play_sound(snd_a_uhoh,0,0)
             }
-        
-        if good != 2
-        instance_destroy()
+        else if good == 3{ //boba
+            score -= 200;
+            with obj_score_draw alarm[1] = 1;
+            with obj_clock {
+                clock += 2.5
+                alarm[0] = 1
+                }  
+            audio_play_sound(snd_eat,0,0);
+            instance_destroy()
+            }
+        else if good == 4{ //banh mi
+            score -= 400;
+            with obj_score_draw alarm[1] = 1;
+            with obj_clock {
+                clock += 5
+                alarm[0] = 1
+            }
+            audio_play_sound(snd_eat,0,0);
+            instance_destroy()
+        }
+            
+        if good != 2 {
+            instance_destroy()
+            }
     }
 }
 </string>

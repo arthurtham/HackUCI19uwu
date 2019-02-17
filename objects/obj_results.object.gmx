@@ -28,6 +28,7 @@
             <string>grow = -1
 xscale = 30
 yscale = xscale
+audio_play_sound(snd_results,0,0)
 </string>
           </argument>
         </arguments>
