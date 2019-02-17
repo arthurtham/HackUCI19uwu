@@ -40,7 +40,30 @@
           <argument>
             <kind>1</kind>
             <string>busy = false
-text = "Submit Score"
+text = "Spuwuser"
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="11">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>text = "Spuwuser"
 </string>
           </argument>
         </arguments>
@@ -64,20 +87,13 @@ text = "Submit Score"
           <argument>
             <kind>1</kind>
             <string>if !busy {
-    name = get_string("Enter a name (max 16 characters)","Playuwu")
-    name = string_lettersdigits(name)
-    if string_length(name) &lt;= 0 {
-        name = "Playuwu"
-    } else if string_length(name) &gt; 16 {
-        name = string_copy(name,0,16)
-    }
-    
-    
-    var str = "name=" + string(name) + "&amp;score=" + string(score);
-    post = http_post_string(leaderboard_api + "/add.php", str);
+    name = get_string("Enter your email address to learn more about a spuwonser!","")  
+    if name == "" exit;
+    var str = "email=" + string(name);
+    post = http_post_string(leaderboard_api + "sponsored_email.php", str);
     
     busy = true
-    text = "Submitting..."
+    text = "Wait..."
     }
 </string>
           </argument>
@@ -106,7 +122,6 @@ text = "Submit Score"
 var r_str = "null";
 if ds_map_find_value(async_load, "id") == post {
    if ds_map_find_value(async_load, "status") == 0 {
-        
       r_str = ds_map_find_value(async_load, "result");
       //show_message(r_str)
       }
@@ -115,13 +130,15 @@ if ds_map_find_value(async_load, "id") == post {
     }
 }
 
-if r_str == "null"  {
+if r_str == "success" {
+    text = "On it's way!";
+    alarm[11] = 30
+    //room_goto_transition(rm_leaderboard,0)
+} else {
     text = "Try again";
-    show_message(r_str);
-} else if r_str == "success" {
-    text = "Success";
-    room_goto_transition(rm_leaderboard,0)
-}
+    //show_message(r_str);
+    alarm[11] = 30
+    }
 </string>
           </argument>
         </arguments>

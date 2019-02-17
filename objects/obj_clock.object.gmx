@@ -174,7 +174,7 @@ alarm[2] = 4
           <argument>
             <kind>1</kind>
             <string>clock -= 1/30
-text = clock
+text = string_format(clock,0,2)
 </string>
           </argument>
         </arguments>
