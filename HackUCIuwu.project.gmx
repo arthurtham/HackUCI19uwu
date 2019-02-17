@@ -3,10 +3,28 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
+  <datafiles number="10" name="datafiles"/>
   <NewExtensions>
     <extension index="0">extensions\Transition System</extension>
   </NewExtensions>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\snd_a_uwu1</sound>
+    <sound>sound\snd_a_uwu2</sound>
+    <sound>sound\snd_a_uwu3</sound>
+    <sound>sound\snd_a_uwu4</sound>
+    <sound>sound\snd_a_uwu5</sound>
+    <sound>sound\snd_a_uwu6</sound>
+    <sound>sound\snd_a_uwu7</sound>
+    <sound>sound\snd_a_uwu8</sound>
+    <sound>sound\snd_eat</sound>
+    <sound>sound\snd_a_title</sound>
+    <sound>sound\snd_a_uhoh</sound>
+    <sound>sound\bgm_italy</sound>
+    <sound>sound\snd_cookie</sound>
+    <sound>sound\snd_start</sound>
+    <sound>sound\snd_bang</sound>
+    <sound>sound\snd_results</sound>
+  </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_test</sprite>
     <sprite>sprites\spr_uwu</sprite>
@@ -25,6 +43,8 @@
     <sprite>sprites\spr_milktea</sprite>
     <sprite>sprites\spr_banhmi</sprite>
     <sprite>sprites\spr_shuttle</sprite>
+    <sprite>sprites\spr_facebook</sprite>
+    <sprite>sprites\spr_about</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -43,6 +63,7 @@
     <object>objects\obj_sponsors_move</object>
     <object>objects\obj_sponsors</object>
     <object>objects\obj_title_main</object>
+    <object>objects\obj_about_main</object>
     <object>objects\obj_cookie</object>
     <object>objects\obj_cookie_controller</object>
     <object>objects\obj_title_sponsors</object>
@@ -52,6 +73,7 @@
     <object>objects\obj_game_controller</object>
     <object>objects\obj_results</object>
     <object>objects\obj_button</object>
+    <object>objects\obj_button_facebook</object>
     <object>objects\obj_button_leaderboard</object>
     <object>objects\obj_button_sponsor</object>
     <object>objects\obj_cookie_neutral</object>
@@ -67,12 +89,14 @@
     <object>objects\obj_leaderboard_header</object>
     <object>objects\obj_leaderboard_controller</object>
     <object>objects\obj_html5controller</object>
+    <object>objects\obj_button_about</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_title</room>
     <room>rooms\rm_game</room>
     <room>rooms\rm_results</room>
     <room>rooms\rm_leaderboard</room>
+    <room>rooms\rm_about</room>
     <room>rooms\rm_test</room>
   </rooms>
   <constants number="1">

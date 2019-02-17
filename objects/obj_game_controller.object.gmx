@@ -132,6 +132,7 @@ instance_create(room_width/2,room_height/11*10,obj_clock)
         with obj_sponsors visible = 0;
         other.timeup = true
         other.alarm[2] = 30
+        audio_play_sound(snd_bang,0,0)
     }
 }
 </string>
