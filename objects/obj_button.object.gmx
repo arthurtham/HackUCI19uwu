@@ -132,6 +132,7 @@ color = c_black
 if goto != noone {
     if goto == rm_game {
         audio_play_sound(snd_start,0,0)
+        audio_play_sound(bgm_italy,0,0)
         }
     room_goto_transition(goto,0,20)
     }
