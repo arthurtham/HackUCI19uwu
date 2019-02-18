@@ -111,7 +111,7 @@ draw_text_custom(room_width/2,room_height/3*2-12,"LEFT CLICK TO START",
 draw_set_alpha(1)*/
 
 
-draw_text_custom(room_width/2,room_height/100*98,"(c) 2019 BrowntulStar | HackUCI 2019",
+draw_text_custom(room_width/2,room_height/100*98,"v1.0.3 | (c) 2019 BrowntulStar | HackUCI 2019",
     fnt_default,c_black,fa_center,fa_middle,false,0.25,0.25,0)
 </string>
           </argument>
