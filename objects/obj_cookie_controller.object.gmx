@@ -232,7 +232,7 @@ with(obj_cookie) {
 //show_message("Clicked is "+string(global.clicked))
 if(position_meeting(mouse_x, mouse_y, global.clicked)) {
     with(global.clicked) {
-        if good == 1 {
+        if good == 1 { //good
             score += 100
             if sprite_index == spr_ewecookie 
                 score += 10
@@ -240,11 +240,17 @@ if(position_meeting(mouse_x, mouse_y, global.clicked)) {
                 score += 25
             with obj_score_draw alarm[0] = 1
             audio_play_sound(irandom_range(0,7),0,0)
+            instance_destroy()
             }
-        else if good == 0 {
+        else if good == 0 { //bad
             score -= 500
             with obj_score_draw alarm[1] = 1
             audio_play_sound(snd_a_uhoh,0,0)
+            instance_destroy()
+            with obj_clock {
+                clock -= 5
+                alarm[1] = 1
+               }
             }
         else if good == 3{ //boba
             score -= 200;
@@ -267,8 +273,8 @@ if(position_meeting(mouse_x, mouse_y, global.clicked)) {
             instance_destroy()
         }
             
-        if good != 2 {
-            instance_destroy()
+        if good == 2 { //peter
+            //do not instance_destroy(), so pass
             }
     }
 }
@@ -318,7 +324,7 @@ bgcolor,bgcolor,bgcolor,bgcolor,false)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>with obj_clock clock = 10
+            <string>with obj_clock clock = 0
 </string>
           </argument>
         </arguments>

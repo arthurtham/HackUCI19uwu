@@ -65,8 +65,12 @@ draw_set_alpha(1)*/
 if room == rm_about {
 
 draw_text_custom(x,room_height/2+100,"Check out the Devpost for more info!
-https://devpost.com/software/hackuwu",
-    fnt_default,c_white,fa_center,fa_middle,true,0.75,0.75,0)
+https://devpost.com/software/hackuwu
+
+I don't have a public social media but I do these:
+https://www.ics.uci.edu/~thamaj/
+https://www.youtube.com/user/GLCTCreations/",
+    fnt_default,c_white,fa_center,fa_middle,true,0.5,0.5,0)
 
 draw_text_custom(room_width/2,room_height/100*98,"(c) 2019 BrowntulStar | HackUCI 2019",
     fnt_default,c_white,fa_center,fa_middle,false,0.25,0.25,0)
