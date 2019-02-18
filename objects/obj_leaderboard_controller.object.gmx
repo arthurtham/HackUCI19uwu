@@ -136,8 +136,10 @@ if r_str == "null"  {
         if _i == 9 {
             leading_zero = ""
         }
-        draw_text_custom(_x,_y,string("["+leading_zero+string(_i+1)+"] "+_entry[0]),
+        draw_text_custom(_x,_y,string("["+leading_zero+string(_i+1)+"]"),
         fnt_default,c_white,fa_left,fa_middle,true,0.8,0.8,0)
+        draw_text_custom(_x+72,_y,string(_entry[0]),
+        fnt_default,c_white,fa_left,fa_middle,true,0.5,0.5,0)
         draw_text_custom(_x+room_width/3,_y,string(_entry[1]),
         fnt_default,c_white,fa_right,fa_middle,true,0.8,0.8,0)
         _y += 36
