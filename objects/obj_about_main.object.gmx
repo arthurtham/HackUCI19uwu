@@ -67,7 +67,7 @@ if room == rm_about {
 draw_text_custom(x,room_height/2+100,"Check out the Devpost for more info!
 https://devpost.com/software/hackuwu
 
-I don't have a public social media but I do these:
+I don't have a public social media but I do have these:
 https://www.ics.uci.edu/~thamaj/
 https://www.youtube.com/user/GLCTCreations/
 https://www.facebook.com/hackuwu/",

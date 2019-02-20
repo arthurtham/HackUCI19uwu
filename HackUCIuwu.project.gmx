@@ -90,6 +90,7 @@
     <object>objects\obj_leaderboard_controller</object>
     <object>objects\obj_html5controller</object>
     <object>objects\obj_button_about</object>
+    <object>objects\obj_button_leaderboard_arrow</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_splash</room>
