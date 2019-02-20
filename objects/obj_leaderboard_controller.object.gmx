@@ -27,7 +27,9 @@
             <kind>1</kind>
             <string>display = false;
 leaderboard_table = ds_list_create();
-post = http_get(string(leaderboard_api)+"gsp.php");
+st = 0
+ready = false
+alarm[0] = 1
 </string>
           </argument>
         </arguments>
@@ -56,6 +58,31 @@ post = http_get(string(leaderboard_api)+"gsp.php");
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>ready = false
+post = http_get(string(leaderboard_api)+"gsp.php?st="+string(st)+"");
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="7" enumb="62">
       <action>
         <libid>1</libid>
@@ -79,6 +106,13 @@ if ds_map_find_value(async_load, "id") == post {
         
       r_str = ds_map_find_value(async_load, "result");
       //show_message(r_str)
+      if r_str == "end" {
+            if st &gt; 0 {
+                st -= 10
+                alarm[0] = 1
+                exit
+            } else r_str = "null";
+        }
       }
    else {
       r_str = "null";
@@ -89,6 +123,7 @@ if r_str == "null"  {
     r_str = "An error occured trying to access the leaderboard from the cloud."
     show_message(r_str);
 } else {
+    ready = true
     leaderboard_table = string_split(r_str,";")
     for (var _i = 0; _i &lt; ds_list_size(leaderboard_table); ++_i) {
         var _temp = string_split(leaderboard_table[| _i],",");
@@ -127,21 +162,31 @@ if r_str == "null"  {
     var _y = room_height/2+24
     var _x = room_width/10+48
     var leading_zero = "0"
-    for (var _i = 0; _i &lt; ds_list_size(leaderboard_table)-1; ++_i) {
+    for (var _i = 0; _i &lt; 10; ++_i) {
         if _i == 5 {
             _x = room_width/5*2.5+48
             _y = room_height/2+24
             }
-        var _entry = leaderboard_table[| _i];
-        if _i == 9 {
+        
+        if _i+st &gt;= 9 {
             leading_zero = ""
         }
-        draw_text_custom(_x,_y,string("["+leading_zero+string(_i+1)+"]"),
-        fnt_default,c_white,fa_left,fa_middle,true,0.8,0.8,0)
-        draw_text_custom(_x+72,_y,string(_entry[0]),
-        fnt_default,c_white,fa_left,fa_middle,true,0.5,0.5,0)
-        draw_text_custom(_x+room_width/3,_y,string(_entry[1]),
-        fnt_default,c_white,fa_right,fa_middle,true,0.8,0.8,0)
+        
+        if (st+_i+1) == 100 {
+            draw_text_custom(_x,_y,string("[:((]"),
+            fnt_default,c_white,fa_left,fa_middle,true,0.8,0.8,0)
+        } else {
+            draw_text_custom(_x,_y,string("["+leading_zero+string(st+_i+1)+"]"),
+            fnt_default,c_white,fa_left,fa_middle,true,0.8,0.8,0)
+        }
+        
+        if (ready and _i &lt; ds_list_size(leaderboard_table)-1) {
+            var _entry = leaderboard_table[| _i];
+            draw_text_custom(_x+72,_y,string(_entry[0]),
+            fnt_default,c_white,fa_left,fa_middle,true,0.5,0.5,0)
+            draw_text_custom(_x+room_width/3,_y,string(_entry[1]),
+            fnt_default,c_white,fa_right,fa_middle,true,0.8,0.8,0)
+        }
         _y += 36
     }
 }
