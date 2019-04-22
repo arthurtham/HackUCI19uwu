@@ -31,11 +31,12 @@ inst.insert = 1
 alarm[0] = 120
 alarm[1] = 270
 
-case_number = irandom_range(0,1)
+case_number = irandom_range(0,2)
 
 switch case_number {
     case 0: inst.danger = "explosion sounds." break;
     case 1: inst.danger = "huge silent protest." break;
+    case 2: inst.danger = "masked person ambushed by mob." break;
     default: inst.danger = "&lt;null&gt;"
 }
 </string>
@@ -93,6 +94,7 @@ inst2.version = 1
 switch case_number {
     case 0: inst2.danger = "Hackers typing on loud#keyboards to beat Thornton's speed."; break;
     case 1: inst2.danger = "Hackers bonding over#Bob Ross in MS Paint." break;
+    case 2: inst2.danger = "Hackers responding to#'Petr Drop.'" break;
     default: inst2.danger = "&lt;null&gt;"
 }
 </string>

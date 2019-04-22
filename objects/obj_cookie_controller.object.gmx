@@ -110,7 +110,9 @@ with obj_score_draw instance_destroy()
     with obj_cookie_bad instance_destroy()
     with obj_boba instance_destroy()
     with obj_cookie_neutral instance_destroy()
-
+    with obj_petr {
+        if spin == 1 instance_destroy()
+    }  
     
     //new phase
     //randomize subphase
@@ -135,6 +137,17 @@ with obj_score_draw instance_destroy()
             if !bg bg = true;
         }
         bgcolor = bgcolors[irandom_range(0,array_length_1d(bgcolors)-1)]
+    }
+    
+    if stage &gt; 6 {
+        if (stage mod 3 == 0) {
+            inst = instance_create(irandom_range(room_width/8,room_width/8*7),
+                        irandom_range(room_height/8,room_height/8*6),
+                        obj_petr);
+            inst.depth = _depth--;
+            //inst.sprite_index = category[irandom_range(0,category_max)]+1;
+            //inst.spin = irandom_range(0,1);
+        }
     }
     
     if stage &gt; 6 {
@@ -279,6 +292,12 @@ if(position_meeting(mouse_x, mouse_y, global.clicked)) {
             }
             audio_play_sound(snd_eat,0,0);
             instance_destroy()
+        }
+        else if good == 5 { //petr
+            alarm[0] = 1
+        }
+        else if good == 2 { //hackuci peter
+            alarm[0] = 1
         }
             
         if good == 2 { //peter
