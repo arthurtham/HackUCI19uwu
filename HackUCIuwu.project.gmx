@@ -45,6 +45,7 @@
     <sprite>sprites\spr_shuttle</sprite>
     <sprite>sprites\spr_facebook</sprite>
     <sprite>sprites\spr_about</sprite>
+    <sprite>sprites\spr_petr</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -77,6 +78,7 @@
     <object>objects\obj_button_leaderboard</object>
     <object>objects\obj_button_sponsor</object>
     <object>objects\obj_cookie_neutral</object>
+    <object>objects\obj_petr</object>
     <object>objects\obj_zotalert</object>
     <object>objects\obj_zotalert_controller</object>
     <object>objects\obj_boba</object>
