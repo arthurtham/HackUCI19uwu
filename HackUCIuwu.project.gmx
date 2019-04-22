@@ -78,6 +78,7 @@
     <object>objects\obj_button_leaderboard</object>
     <object>objects\obj_button_sponsor</object>
     <object>objects\obj_cookie_neutral</object>
+    <object>objects\obj_cat</object>
     <object>objects\obj_petr</object>
     <object>objects\obj_zotalert</object>
     <object>objects\obj_zotalert_controller</object>
@@ -107,9 +108,10 @@
     <room>rooms\rm_about</room>
     <room>rooms\rm_test</room>
   </rooms>
-  <constants number="2">
-    <constant name="transposit_api">"https://api.transposit.com/app/thamaj/transposit_web_test/api/v1/execute/get_full_entry?api_key=ugjle7lqt3rtlds0pihugu2pbq"</constant>
+  <constants number="3">
+    <constant name="transposit_api_dict">"https://api.transposit.com/app/thamaj/transposit_web_test/api/v1/execute/get_full_entry?api_key=ugjle7lqt3rtlds0pihugu2pbq"</constant>
     <constant name="leaderboard_api">"http://35.185.241.199/"</constant>
+    <constant name="transposit_api_cat">"https://api.transposit.com/app/thamaj/transposit_web_test/api/v1/execute/search_gifs?api_key=ugjle7lqt3rtlds0pihugu2pbq"</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>
