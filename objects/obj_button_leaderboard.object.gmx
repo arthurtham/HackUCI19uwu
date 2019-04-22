@@ -41,6 +41,7 @@
             <kind>1</kind>
             <string>busy = false
 text = "Submit Score"
+post = ""
 
 if global.seeded {
     text = "(Try w/o Seed...)"

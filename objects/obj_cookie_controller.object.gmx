@@ -141,10 +141,10 @@ with obj_score_draw instance_destroy()
         bgcolor = bgcolors[irandom_range(0,array_length_1d(bgcolors)-1)]
     }
     
-    /*if stage &gt; 6 {
-        if (stage mod 3 == 0) {*/
-    if stage &gt;= 0 {
-        if true {
+    if stage &gt; 6 {
+        if (stage mod 3 == 0) {
+    //if stage &gt;= 0 {
+      //  if true {
             inst = instance_create(irandom_range(room_width/8,room_width/8*7),
                         irandom_range(room_height/8,room_height/8*6),
                         obj_petr);

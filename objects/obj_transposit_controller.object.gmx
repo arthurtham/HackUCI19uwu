@@ -35,9 +35,15 @@ result = ""
 result_def = "(Loading definition...)"
 result_word = "word"
 result_pos = ""
-switch (irandom_range(0,1)) {
+switch (irandom_range(0,7)) {
     case 0: result_word = "hack"; break;
     case 1: result_word = "library"; break;
+    case 2: result_word = "programming"; break;
+    case 3: result_word = "competition"; break;
+    case 4: result_word = "painting"; break;
+    case 5: result_word = "anteater"; break;
+    case 6: result_word = "intern"; break;
+    case 7: result_word = "job"; break;
     default: result_world = "hello"; break;
 }
 alarm[0] = 1
