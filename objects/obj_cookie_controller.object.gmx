@@ -105,15 +105,23 @@ with obj_score_draw instance_destroy()
           <argument>
             <kind>1</kind>
             <string>if not instance_exists(obj_cookie_good) {
-
+    
     //wipeout phase
     with obj_cookie_bad instance_destroy()
     with obj_boba instance_destroy()
     with obj_cookie_neutral instance_destroy()
-    
 
+    
     //new phase
+    //randomize subphase
     ++stage;
+    
+    if global.seeded {
+        random_set_seed(random_get_seed()+stage)
+    } else {
+        randomize()
+    }
+    
     var _depth = 0;
     
     if (category_max &lt; array_length_1d(category)-1) and (stage mod 3 == 0) {
@@ -141,7 +149,7 @@ with obj_score_draw instance_destroy()
     }
     
     if stage &gt; 7 {
-        repeat(stage / 4) {
+        repeat(min(10,stage / 4)) {
             inst = instance_create(irandom_range(room_width/8,room_width/8*7),
                         irandom_range(room_height/8,room_height/8*6),
                         obj_boba);
@@ -152,7 +160,7 @@ with obj_score_draw instance_destroy()
     }
     
     if stage &gt; 9 {
-        repeat(stage / 5) {
+        repeat(min(5,stage / 5)) {
             inst = instance_create(irandom_range(room_width/8,room_width/8*7),
                         irandom_range(room_height/8,room_height/8*6),
                         obj_banhmi);

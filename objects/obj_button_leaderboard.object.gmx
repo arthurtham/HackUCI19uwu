@@ -41,6 +41,11 @@
             <kind>1</kind>
             <string>busy = false
 text = "Submit Score"
+
+if global.seeded {
+    text = "(Try w/o Seed...)"
+    busy = true
+}
 </string>
           </argument>
         </arguments>
