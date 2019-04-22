@@ -40,6 +40,7 @@
           <argument>
             <kind>1</kind>
             <string>stage = 0;
+cat_loaded = false;
 category_max = 0;
 category = array_create(3)
 category[0] = spr_uwucookie
@@ -110,6 +111,7 @@ with obj_score_draw instance_destroy()
     with obj_cookie_bad instance_destroy()
     with obj_boba instance_destroy()
     with obj_cookie_neutral instance_destroy()
+    with obj_cat instance_destroy()
     with obj_petr {
         if spin == 1 instance_destroy()
     }  
@@ -199,6 +201,12 @@ with obj_score_draw instance_destroy()
         inst = instance_create(irandom_range(room_width/8,room_width/8*7),
                         room_height/8*6,
                         obj_shuttle);
+    }
+    
+    if stage &gt;= 10 {
+        inst = instance_create(irandom_range(room_width/8,room_width/8*7),
+                        room_height/8*6,
+                        obj_cat);
     }
     
     repeat(min(stage,15)) {
@@ -299,10 +307,11 @@ if(position_meeting(mouse_x, mouse_y, global.clicked)) {
         else if good == 2 { //hackuci peter
             alarm[0] = 1
         }
+        else if good == 6 { //cat
+            alarm[0] = 1
+        }
             
-        if good == 2 { //peter
-            //do not instance_destroy(), so pass
-            }
+        
     }
 }
 </string>

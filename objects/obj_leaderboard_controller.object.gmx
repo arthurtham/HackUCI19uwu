@@ -118,23 +118,24 @@ if ds_map_find_value(async_load, "id") == post {
    else {
       r_str = "null";
     }
-}
+//}
 
-if r_str == "null"  {
-    r_str = "An error occured trying to access the leaderboard from the cloud."
-    show_message(r_str);
-} else {
-    ready = true
-    leaderboard_table = string_split(r_str,";")
-    for (var _i = 0; _i &lt; ds_list_size(leaderboard_table); ++_i) {
-        var _temp = string_split(leaderboard_table[| _i],",");
-        var _temp2 = array_create(3);
-        _temp2[0] = _temp[| 0];
-        _temp2[1] = _temp[| 1];
-        _temp2[2] = _temp[| 2];
-        leaderboard_table[| _i] = _temp2;
-        ds_list_destroy(_temp)
-        display = true
+    if r_str == "null"  {
+        r_str = "An error occured trying to access the leaderboard from the cloud."
+        show_message(r_str);
+    } else {
+        ready = true
+        leaderboard_table = string_split(r_str,";")
+        for (var _i = 0; _i &lt; ds_list_size(leaderboard_table); ++_i) {
+            var _temp = string_split(leaderboard_table[| _i],",");
+            var _temp2 = array_create(3);
+            _temp2[0] = _temp[| 0];
+            _temp2[1] = _temp[| 1];
+            _temp2[2] = _temp[| 2];
+            leaderboard_table[| _i] = _temp2;
+            ds_list_destroy(_temp)
+            display = true
+        }
     }
 }
 </string>

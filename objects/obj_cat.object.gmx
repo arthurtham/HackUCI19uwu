@@ -3,9 +3,9 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-100</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>obj_cookie</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,28 +25,34 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>display = false;
-leaderboard_table = ds_list_create();
-st = 0
-hackuwu = 0
-ready = false
-r_str = "&lt;null&gt;"
-result = ""
-result_def = "(Loading definition...)"
-result_word = "word"
-result_pos = ""
-switch (irandom_range(0,1)) {
-    case 0: result_word = "hack"; break;
-    case 1: result_word = "library"; break;
-    default: result_world = "hello"; break;
-}
-alarm[0] = 1
+            <string>///sprite_add test
+ready = true
+if !obj_cookie_controller.cat_loaded {
+    ready = false
+    headers = ds_map_create()
+    ds_map_add(headers,"Content-Type","application/json")
+    
+    json = '
+    {
+    "parameters" : {
+    "query" : "'+"cat"+'"
+    }
+    }
+    ';
+    
+    //show_message(json)
+    //post = http_post_string(transposit_api,json)
+    post = http_request(transposit_api_cat,"POST",headers,json)
+    ds_map_destroy(headers)
+} else {
+    sprite_index = obj_cookie_controller.cat_loaded
+    }
+
+//sprite_index = sprite_add("https://media0.giphy.com/media/WXB88TeARFVvi/200w.gif",0,0,0,100,100)
 </string>
           </argument>
         </arguments>
       </action>
-    </event>
-    <event eventtype="1" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -63,8 +69,33 @@ alarm[0] = 1
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>ds_list_destroy(leaderboard_table);
+            <string>good = 6
+spin = 1
 </string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>101</id>
+        <kind>0</kind>
+        <userelative>-1</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_move</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>111101111</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>5</string>
           </argument>
         </arguments>
       </action>
@@ -72,37 +103,25 @@ alarm[0] = 1
     <event eventtype="2" enumb="0">
       <action>
         <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
+        <id>101</id>
+        <kind>0</kind>
+        <userelative>-1</userelative>
         <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
+        <exetype>1</exetype>
+        <functionname>action_move</functionname>
         <codestring></codestring>
         <whoName>self</whoName>
-        <relative>0</relative>
+        <relative>-1</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>ready = false
-headers = ds_map_create()
-ds_map_add(headers,"Content-Type","application/json")
-
-json = '
-{
-"parameters" : {
-"query" : "'+result_word+'"
-}
-}
-';
-
-//show_message(json)
-//post = http_post_string(transposit_api,json)
-post = http_request(transposit_api_dict,"POST",headers,json)
-ds_map_destroy(headers)
-</string>
+            <string>101000101</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>irandom_range(7,10)</string>
           </argument>
         </arguments>
       </action>
@@ -137,10 +156,12 @@ if ds_map_find_value(async_load, "id") == post {
         } else {
         var result2 = result[? "result"]
         result2 = result2[? "results"]
-        result2 = result2[| 0]
-        result_pos = result2[? "partOfSpeech"]
-        result2 = result2[? "definitions"]
-        result_def = result2[| 0]
+        result2 = result2[| irandom_range(0,9)]
+        result2 = result2[? "url"]
+        result_def = result2
+        //show_message(result_def)
+        sprite_index = sprite_add(result_def,0,0,0,100,100)
+        obj_cookie_controller.cat_loaded = sprite_index
         //result_def = result_def[
         //show_message(result_def)
         }
@@ -150,47 +171,15 @@ if ds_map_find_value(async_load, "id") == post {
    else {
       r_str = "null";
     }
-}
 
-if r_str == "null"  {
-    r_str = "An error occured trying to access the Transposit API from the cloud."
-    show_message(r_str);
-} else {
-    ready = true
-    display = true
+    if r_str == "null"  {
+        r_str = "An error occured trying to access the Transposit API from the cloud."
+        //show_message(r_str);
+    } else {
+        ready = true
+        display = true
+    }
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if display {
-    draw_set_alpha(1)
-    draw_text_custom(x,y,result_word+" ("+result_pos+")"+"#"
-    ,fnt_default,c_white,fa_left,fa_top,true,1,1,0)
-    draw_set_color(c_white)
-    draw_set_halign(fa_left)
-    draw_text_ext_transformed(x,y+60,result_def,48,room_width*(1/0.9),0.7,0.7,0)
-}
-
-///draw_text_center(x,y,text,font,color,h_center,v_center,shadow,scalex,scaley,angle
 </string>
           </argument>
         </arguments>
