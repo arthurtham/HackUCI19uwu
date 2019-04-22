@@ -29,7 +29,7 @@
 var _counter = 0
 for (var _i = 0; _i &lt; 7; ++_i) {
     for (var _j = 0; _j &lt; 3; ++_j) {
-        if _j == 2 and (_i == 0 or _i == 6) {
+        if _j == 2 and (_i == 6) {
             continue
             }
         inst = instance_create(room_width/8*(1+_i),

@@ -28,12 +28,12 @@
             <string>draw_set_alpha(1)
 draw_self()
 
-if room == rm_transposit {
-    draw_sprite_ext(spr_sponsors,19,room_width/2,room_height/5+5,
+if room == rm_petr {
+    draw_sprite_ext(spr_petr,0,room_width/2,room_height/5+5,
     2.5,2.5,0,c_white,1)
-    draw_text_custom(x,y+25,"Truwu-Facts",
+    draw_text_custom(x,y+25,"Petr Gallery",
         fnt_default,c_white,fa_center,fa_middle,true,1.3,1.3,0);
-    draw_text_custom(x,y+75,"Powered by Truwuposit#(in its non-uwu state)",
+    draw_text_custom(x,y+75,"Find all the Petrs in the game!#(Where's the next drop?)",
         fnt_default,c_gray,fa_center,fa_top,true,0.3,0.3,0);
         }
 </string>
