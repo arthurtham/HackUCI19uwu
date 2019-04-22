@@ -91,6 +91,7 @@
     <object>objects\obj_html5controller</object>
     <object>objects\obj_button_about</object>
     <object>objects\obj_button_leaderboard_arrow</object>
+    <object>objects\obj_button_leaderboard_hackuwu</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_splash</room>

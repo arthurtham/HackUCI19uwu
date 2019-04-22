@@ -28,6 +28,7 @@
             <string>display = false;
 leaderboard_table = ds_list_create();
 st = 0
+hackuwu = 0
 ready = false
 alarm[0] = 1
 </string>
@@ -76,7 +77,7 @@ alarm[0] = 1
           <argument>
             <kind>1</kind>
             <string>ready = false
-post = http_get(string(leaderboard_api)+"gsp.php?st="+string(st)+"");
+post = http_get(string(leaderboard_api)+"gsp.php?st="+string(st)+"&amp;hackuwu="+string(hackuwu)+"");
 
 </string>
           </argument>
@@ -127,9 +128,10 @@ if r_str == "null"  {
     leaderboard_table = string_split(r_str,";")
     for (var _i = 0; _i &lt; ds_list_size(leaderboard_table); ++_i) {
         var _temp = string_split(leaderboard_table[| _i],",");
-        var _temp2 = array_create(2);
+        var _temp2 = array_create(3);
         _temp2[0] = _temp[| 0];
         _temp2[1] = _temp[| 1];
+        _temp2[2] = _temp[| 2];
         leaderboard_table[| _i] = _temp2;
         ds_list_destroy(_temp)
         display = true
@@ -173,10 +175,10 @@ if r_str == "null"  {
         }
         
         if (st+_i+1) == 100 {
-            draw_text_custom(_x,_y,string("[:((]"),
+            draw_text_custom(_x,_y,string("(:(()"),
             fnt_default,c_white,fa_left,fa_middle,true,0.8,0.8,0)
         } else {
-            draw_text_custom(_x,_y,string("["+leading_zero+string(st+_i+1)+"]"),
+            draw_text_custom(_x,_y,string("("+leading_zero+string(st+_i+1)+")"),
             fnt_default,c_white,fa_left,fa_middle,true,0.8,0.8,0)
         }
         
@@ -186,7 +188,14 @@ if r_str == "null"  {
             fnt_default,c_white,fa_left,fa_middle,true,0.5,0.5,0)
             draw_text_custom(_x+room_width/3,_y,string(_entry[1]),
             fnt_default,c_white,fa_right,fa_middle,true,0.8,0.8,0)
+            
+            if (real(_entry[2]) &lt; 1550448000) {   //Did submission come before
+                                            //end of HackUCI?
+                draw_sprite_ext(spr_hacklogo,0,_x-22,_y+4,0.3,0.3,0,c_white,1)
+                draw_text_custom(_x-48,_y+4,"Hack#UCI",fnt_default,c_white,fa_right,fa_middle,true,0.2,0.2,0)
+            }
         }
+        
         _y += 36
     }
 }
