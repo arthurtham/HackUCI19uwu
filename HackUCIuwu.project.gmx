@@ -56,6 +56,8 @@
     </scripts>
     <script>scripts\string_split.gml</script>
     <script>scripts\scale_canvas.gml</script>
+    <script>scripts\game_save_secure.gml</script>
+    <script>scripts\game_load_secure.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_default</font>
@@ -68,6 +70,7 @@
     <object>objects\obj_cookie</object>
     <object>objects\obj_cookie_controller</object>
     <object>objects\obj_title_sponsors</object>
+    <object>objects\obj_petr_found</object>
     <object>objects\obj_clock</object>
     <object>objects\obj_cookie_bad</object>
     <object>objects\obj_cookie_good</object>
@@ -91,6 +94,7 @@
     </objects>
     <object>objects\obj_leaderboard_header</object>
     <object>objects\obj_transposit_header</object>
+    <object>objects\obj_petr_header</object>
     <object>objects\obj_leaderboard_controller</object>
     <object>objects\obj_transposit_controller</object>
     <object>objects\obj_html5controller</object>
@@ -105,6 +109,7 @@
     <room>rooms\rm_results</room>
     <room>rooms\rm_leaderboard</room>
     <room>rooms\rm_transposit</room>
+    <room>rooms\rm_petr</room>
     <room>rooms\rm_about</room>
     <room>rooms\rm_test</room>
   </rooms>

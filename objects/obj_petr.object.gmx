@@ -102,6 +102,8 @@ image_yscale = image_xscale
           <argument>
             <kind>1</kind>
             <string>spin = 0
+global.petr_found[| image_index] = 1
+game_save_secure();
 </string>
           </argument>
         </arguments>
