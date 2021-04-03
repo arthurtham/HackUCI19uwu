@@ -87,16 +87,12 @@ draw_set_alpha(1)*/
 
 if room == rm_about {
 
-draw_text_custom(x,room_height/2+100,"Check out the Devpost for more info!
-https://devpost.com/software/hackuwu
-
-I don't have a public social media but I do have these:
-https://www.ics.uci.edu/~thamaj/
-https://www.youtube.com/user/GLCTCreations/
-https://www.facebook.com/hackuwu/",
+draw_text_custom(x,room_height/2+100,"https://www.hackuwu.tech/
+https://www.facebook.com/hackuwu/
+https://browntulstar.itch.io/",
     fnt_default,c_white,fa_center,fa_middle,true,0.5,0.5,0)
 
-draw_text_custom(room_width/2,room_height/100*98,"(c) 2019 BrowntulStar | HackUCI 2019",
+draw_text_custom(room_width/2,room_height/100*98,"(c) 2019-21 BrowntulStar | HackUCI 2019",
     fnt_default,c_white,fa_center,fa_middle,false,0.25,0.25,0)
     
 }

@@ -3,7 +3,7 @@
   <caption></caption>
   <width>1366</width>
   <height>768</height>
-  <vsnap>4</vsnap>
+  <vsnap>2</vsnap>
   <hsnap>4</hsnap>
   <isometric>0</isometric>
   <speed>30</speed>
@@ -61,6 +61,7 @@
     <instance objName="obj_leaderboard_header" x="680" y="187" name="inst_838C4799" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_button" x="200" y="364" name="inst_2A22A623" locked="0" code="goto = rm_transposit&#xA;text = &quot;Truwuposit&quot;&#xA;size = 0&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_button" x="1168" y="472" name="inst_4E5D9A77" locked="0" code="goto = rm_petr&#xA;text = &quot;Petr&quot;&#xA;size = 0&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_button_volume" x="1164" y="30" name="inst_44D6C13F" locked="0" code="" scaleX="0.579999983310699" scaleY="0.589999973773956" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

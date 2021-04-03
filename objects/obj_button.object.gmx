@@ -137,7 +137,7 @@ if goto != noone {
         if text == "OwO! (Seeded)" {
             //Seeded run
             keyboard_clear(vk_lshift)
-            text = "Start"
+            text = "UwU! (Start)"
             _dialog_answer = get_string_async("Set seed (alphanumeric only):",1);
             } else {
             randomize()

@@ -44,7 +44,7 @@ text = "Submit Score"
 post = ""
 
 if global.seeded {
-    text = "(Try w/o Seed...)"
+    text = "(Can't submit)"
     busy = true
 }
 </string>

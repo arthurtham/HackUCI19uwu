@@ -46,6 +46,7 @@
     <sprite>sprites\spr_facebook</sprite>
     <sprite>sprites\spr_about</sprite>
     <sprite>sprites\spr_petr</sprite>
+    <sprite>sprites\spr_volume</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -99,6 +100,7 @@
     <object>objects\obj_transposit_controller</object>
     <object>objects\obj_html5controller</object>
     <object>objects\obj_button_about</object>
+    <object>objects\obj_button_volume</object>
     <object>objects\obj_button_leaderboard_arrow</object>
     <object>objects\obj_button_leaderboard_hackuwu</object>
   </objects>
@@ -114,9 +116,9 @@
     <room>rooms\rm_test</room>
   </rooms>
   <constants number="3">
-    <constant name="transposit_api_dict">"https://api.transposit.com/app/thamaj/transposit_web_test/api/v1/execute/get_full_entry?api_key=ugjle7lqt3rtlds0pihugu2pbq"</constant>
-    <constant name="leaderboard_api">"https://www.hackuwu.tech/"</constant>
-    <constant name="transposit_api_cat">"https://api.transposit.com/app/thamaj/transposit_web_test/api/v1/execute/search_gifs?api_key=ugjle7lqt3rtlds0pihugu2pbq"</constant>
+    <constant name="transposit_api_dict">"https://api.transposit.com/app/thamaj/transposit_web_test/api/v1/execute/get_full_entry?api_key=m3ns0jbgq36lo8qs04ut83gbma"</constant>
+    <constant name="leaderboard_api">"https://www.hackuwu.tech/anteaters/"</constant>
+    <constant name="transposit_api_cat">"https://api.transposit.com/app/thamaj/transposit_web_test/api/v1/execute/search_gifs?api_key=m3ns0jbgq36lo8qs04ut83gbma"</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>
