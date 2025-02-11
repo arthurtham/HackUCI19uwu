@@ -54,6 +54,7 @@
     <instance objName="obj_button" x="704" y="672" name="inst_980A335B" locked="0" code="goto = rm_title&#xA;text = &quot;Back&quot;&#xA;size = 0&#xA;x = room_width/2&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_petr_header" x="684" y="240" name="inst_622A32BA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_petr_found" x="108" y="432" name="inst_2892C001" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_button_volume" x="1328" y="32" name="inst_1F197F2C" locked="0" code="" scaleX="0.5799999833107" scaleY="0.589999973773956" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

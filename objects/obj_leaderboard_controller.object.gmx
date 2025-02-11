@@ -109,7 +109,7 @@ if ds_map_find_value(async_load, "id") == post {
       //show_message(r_str)
       if r_str == "end" {
             if st &gt; 0 {
-                st -= 10
+                st = 0
                 alarm[0] = 1
                 exit
             } else r_str = "null";
@@ -120,7 +120,7 @@ if ds_map_find_value(async_load, "id") == post {
     }
 //}
 
-    if r_str == "null"  {
+    if r_str == "null" or r_str == "failed"  {
         r_str = "An error occured trying to access the leaderboard from the cloud."
         show_message(r_str);
     } else {
@@ -175,13 +175,13 @@ if ds_map_find_value(async_load, "id") == post {
             leading_zero = ""
         }
         
-        if (st+_i+1) == 100 {
-            draw_text_custom(_x,_y,string("(:(()"),
-            fnt_default,c_white,fa_left,fa_middle,true,0.8,0.8,0)
-        } else {
+        //if (st+_i+1) == 100 {
+        //    draw_text_custom(_x,_y,string("(:(()"),
+        //    fnt_default,c_white,fa_left,fa_middle,true,0.8,0.8,0)
+        //} else {
             draw_text_custom(_x,_y,string("("+leading_zero+string(st+_i+1)+")"),
-            fnt_default,c_white,fa_left,fa_middle,true,0.8,0.8,0)
-        }
+            fnt_default,c_white,fa_left,fa_middle,true,0.6,0.6,0)
+        //}
         
         if (ready and _i &lt; ds_list_size(leaderboard_table)-1) {
             var _entry = leaderboard_table[| _i];
@@ -193,7 +193,7 @@ if ds_map_find_value(async_load, "id") == post {
             if (real(_entry[2]) &lt; 1550448000) {   //Did submission come before
                                             //end of HackUCI?
                 draw_sprite_ext(spr_hacklogo,0,_x-22,_y+4,0.3,0.3,0,c_white,1)
-                draw_text_custom(_x-48,_y+4,"Hack#UCI",fnt_default,c_white,fa_right,fa_middle,true,0.2,0.2,0)
+                draw_text_custom(_x-44,_y+4,"Hack#UCI",fnt_default,c_white,fa_right,fa_middle,true,0.2,0.2,0)
             }
         }
         

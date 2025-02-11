@@ -108,13 +108,13 @@ with obj_score_draw instance_destroy()
             <string>if not instance_exists(obj_cookie_good) {
     
     //wipeout phase
-    with obj_cookie_bad instance_destroy()
-    with obj_boba instance_destroy()
-    with obj_cookie_neutral instance_destroy()
-    with obj_cat instance_destroy()
-    with obj_petr {
-        if spin == 1 instance_destroy()
-    }  
+    with obj_cookie {
+        if object_index == obj_petr and spin != 1 {
+            // do nothing
+        } else {
+            instance_destroy()   
+        }
+    }
     
     //new phase
     //randomize subphase
@@ -177,7 +177,7 @@ with obj_score_draw instance_destroy()
     }
     
     if stage &gt; 9 {
-        repeat(min(5,stage / 5)) {
+        repeat(min(8,stage / 5)) {
             inst = instance_create(irandom_range(room_width/8,room_width/8*7),
                         irandom_range(room_height/8,room_height/8*6),
                         obj_banhmi);

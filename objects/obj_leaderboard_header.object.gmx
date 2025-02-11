@@ -31,7 +31,7 @@ draw_self()
 if room == rm_leaderboard {
     draw_sprite_ext(spr_sponsors,3,room_width/2,room_height/5+5,
     2.5,2.5,0,c_white,1)
-    draw_text_custom(x,y+25,"Top 100",
+    draw_text_custom(x,y+25,"Top Uwu's",
         fnt_default,c_white,fa_center,fa_middle,true,1.3,1.3,0);
     draw_text_custom(x,y+75,"Powered by Google Cloud#(in its non-uwu state)",
         fnt_default,c_gray,fa_center,fa_top,true,0.3,0.3,0);

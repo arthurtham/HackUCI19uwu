@@ -53,6 +53,7 @@ alarm[0] = 1
           <argument>
             <kind>1</kind>
             <string>game_load_secure()
+global.copyright = "v1.3 | Original: (c) 2019 AJT - Update: (c) 2025 BrowntulStar | HackUCI 2019"
 </string>
           </argument>
         </arguments>
@@ -87,13 +88,11 @@ draw_set_alpha(1)*/
 
 if room == rm_about {
 
-draw_text_custom(x,room_height/2+100,"https://www.hackuwu.tech/
-https://www.facebook.com/hackuwu/
-https://browntulstar.itch.io/",
+draw_text_custom(x,room_height/2+100,'Patched and republished in 2025 by BrowntulStar.
+https://browntulstar.com',
     fnt_default,c_white,fa_center,fa_middle,true,0.5,0.5,0)
 
-draw_text_custom(room_width/2,room_height/100*98,"(c) 2019-21 BrowntulStar | HackUCI 2019",
-    fnt_default,c_white,fa_center,fa_middle,false,0.25,0.25,0)
+draw_text_custom(room_width/2,room_height/100*98,global.copyright,fnt_default,c_white,fa_center,fa_middle,false,0.25,0.25,0)
     
 }
 </string>

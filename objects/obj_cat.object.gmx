@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>///sprite_add test
 ready = true
-if !obj_cookie_controller.cat_loaded {
+/*if !obj_cookie_controller.cat_loaded {
     ready = false
     headers = ds_map_create()
     ds_map_add(headers,"Content-Type","application/json")
@@ -44,9 +44,9 @@ if !obj_cookie_controller.cat_loaded {
     //post = http_post_string(transposit_api,json)
     post = http_request(transposit_api_cat,"POST",headers,json)
     ds_map_destroy(headers)
-} else {
+} else {*/
     sprite_index = obj_cookie_controller.cat_loaded
-    }
+//    }
 
 //sprite_index = sprite_add("https://media0.giphy.com/media/WXB88TeARFVvi/200w.gif",0,0,0,100,100)
 </string>

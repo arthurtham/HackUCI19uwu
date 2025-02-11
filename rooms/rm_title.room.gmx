@@ -3,8 +3,8 @@
   <caption></caption>
   <width>1366</width>
   <height>768</height>
-  <vsnap>2</vsnap>
-  <hsnap>4</hsnap>
+  <vsnap>16</vsnap>
+  <hsnap>16</hsnap>
   <isometric>0</isometric>
   <speed>30</speed>
   <persistent>0</persistent>
@@ -51,17 +51,14 @@
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
+    <instance objName="obj_button_about" x="1280" y="32" name="inst_9E10AE24" locked="0" code="" scaleX="0.578947365283966" scaleY="0.592105269432068" colour="4294967295" rotation="0"/>
+    <instance objName="obj_button_volume" x="1328" y="32" name="inst_44D6C13F" locked="0" code="" scaleX="0.5799999833107" scaleY="0.589999973773956" colour="4294967295" rotation="0"/>
     <instance objName="obj_title_main" x="677" y="175" name="inst_A3598AB0" locked="0" code="" scaleX="1.01192510128021" scaleY="1.01677846908569" colour="4294967295" rotation="0"/>
     <instance objName="obj_title_sponsors" x="704" y="592" name="inst_B71D2E6C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_button" x="684" y="472" name="inst_F3AC54BC" locked="0" code="goto = rm_game&#xA;text = &quot;UwU! (Start)&quot;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_button" x="1168" y="368" name="inst_4272C007" locked="0" code="goto = rm_leaderboard&#xA;text = &quot;Top 100&quot;&#xA;size = 0&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_button_sponsor" x="200" y="468" name="inst_89409820" locked="0" code="size = 0&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_button_facebook" x="1302" y="28" name="inst_27250D1E" locked="0" code="" scaleX="0.699999988079071" scaleY="0.699999988079071" colour="4294967295" rotation="0"/>
-    <instance objName="obj_button_about" x="1217" y="29" name="inst_9E10AE24" locked="0" code="" scaleX="0.578947365283966" scaleY="0.592105269432068" colour="4294967295" rotation="0"/>
+    <instance objName="obj_button" x="200" y="474" name="inst_4272C007" locked="0" code="goto = rm_leaderboard&#xA;text = &quot;Top Uwu's&quot;&#xA;size = 0&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_leaderboard_header" x="680" y="187" name="inst_838C4799" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_button" x="200" y="364" name="inst_2A22A623" locked="0" code="goto = rm_transposit&#xA;text = &quot;Truwuposit&quot;&#xA;size = 0&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_button" x="1168" y="472" name="inst_4E5D9A77" locked="0" code="goto = rm_petr&#xA;text = &quot;Petr&quot;&#xA;size = 0&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_button_volume" x="1164" y="30" name="inst_44D6C13F" locked="0" code="" scaleX="0.579999983310699" scaleY="0.589999973773956" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
